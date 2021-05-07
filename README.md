@@ -1,8 +1,12 @@
 A Visual Studio Code extension to add support for Convex Lisp.
 
-## Package
+## Develop
+```bash
+npm run watch
+```
 
+## Package
 To compile and package the extension run:
-```shell
+```bash
 npx vsce package
 ```
