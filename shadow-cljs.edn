@@ -1,0 +1,8 @@
+{:deps true
+
+ :builds
+ {:extension
+  {:target :node-library
+   :output-to "extension.js"
+   :exports {:activate convex-vscode.core/activate}
+   :compiler-options {:optimizations :simple}}}}

@@ -1,0 +1,12 @@
+node_modules
+.vscode-test/
+*.vsix
+.shadow-cljs/
+extension.js
+.nrepl-port
+*.DS_Store
+pom.xml
+.idea/
+.cpcache
+.lsp/
+*.iml

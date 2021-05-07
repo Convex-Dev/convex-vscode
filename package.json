@@ -1,0 +1,57 @@
+{
+  "name": "convex-vscode",
+  "displayName": "Convex",
+  "description": "Convex support.",
+  "version": "0.1.0",
+  "publisher": "pedrorgirardi",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.22.0"
+  },
+  "main": "./extension",
+  "contributes": {
+    "languages": [
+      {
+        "id": "convex",
+        "aliases": [
+          "Convex",
+          "convex"
+        ],
+        "extensions": [
+          ".con",
+          ".convex"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "convex",
+        "scopeName": "source.clojure",
+        "path": "./syntaxes/clojure.tmLanguage.json"
+      }
+    ]
+  },
+  "activationEvents": [
+    "onLanguage:convex"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/vscode.git"
+  },
+  "scripts": {
+    "clean": "rm -rf .shadow-cljs",
+    "watch": "npx shadow-cljs watch :extension",
+    "compile": "npx shadow-cljs compile :extension",
+    "release": "npx shadow-cljs release :extension",
+    "clj-repl": "npx shadow-cljs clj-repl",
+    "cljs-repl": "npx shadow-cljs cljs-repl :extension",
+    "vscode:prepublish": "npm run clean & npm run release",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.11.4",
+    "vscode": "^1.1.35"
+  }
+}
